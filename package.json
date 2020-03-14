@@ -1,0 +1,36 @@
+{
+  "name": "@armorjs/testing",
+  "version": "0.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "scripts": {
+    "test": "yarn jest --coverage",
+    "lint": "yarn tslint --project .",
+    "build:nolint": "yarn tsc",
+    "build": "yarn lint && yarn tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/armorjs/testing.git"
+  },
+  "keywords": [
+    "Testing",
+    "Jest",
+    "Typescript"
+  ],
+  "author": "Michael Brich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/armorjs/testing/issues"
+  },
+  "homepage": "https://github.com/armorjs/testing#readme",
+  "devDependencies": {
+    "@types/jest": "^25.1.4",
+    "@types/node": "^13.9.1",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.1",
+    "ts-lint": "^4.5.1",
+    "typescript": "^3.8.3"
+  }
+}
