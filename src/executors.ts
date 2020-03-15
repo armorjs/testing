@@ -1,3 +1,1 @@
-export class ArmorTestExecutors {
-
-}
+export class ArmorTestExecutors {}
