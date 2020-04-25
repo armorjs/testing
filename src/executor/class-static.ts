@@ -13,7 +13,7 @@ export class ArmorTestExecutorClassStatic extends ArmorTestExecutor {
 	};
 
 	constructor() {
-		super('class.static', [new ArmorTestCasesClass()]);
+		super('class.static');
 		this.staticMethod = {
 			exists: new ArmorTestCaseStaticMethodExists(this.id, '', ''),
 			paramCount: new ArmorTestCaseStaticMethodParamCount(this.id, '', '')

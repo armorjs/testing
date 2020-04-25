@@ -2,11 +2,9 @@ import {ArmorTestCases} from '../cases';
 
 export class ArmorTestExecutor {
 	public readonly id: string;
-	public readonly cases: ArmorTestCases[];
 
-	constructor(id: string, cases: ArmorTestCases[]) {
+	constructor(id: string) {
 		this.id = id;
-		this.cases = cases;
 	}
 
 	public async execute(testFunction: any, value: any, expectedResult: any): Promise<any> {
@@ -20,11 +18,6 @@ export class ArmorTestExecutor {
 			throw new Error(
 				`ArmorTestExecutor execution with id '${this.id}' failed - testFunction argument not a valid function.`
 			);
-		}
-
-		// tslint:disable-next-line
-		for (let i = 0; i < this.cases.length; i++) {
-			const testCase: ArmorTestCase = this.cases[i];
 		}
 	}
 

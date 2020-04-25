@@ -13,7 +13,7 @@ export class ArmorTestExecutorClassInstance extends ArmorTestExecutor {
 	};
 
 	constructor(methods: ArmorTestInputClassMethod[]) {
-		super('class', [new ArmorTestCasesClass()]);
+		super('class.instance');
 		this.instanceMethod = {
 			exists: new ArmorTestCaseInstanceMethodExists(this.id, '', ''),
 			paramCount: new ArmorTestCaseInstanceMethodParamCount(this.id, '', '')
