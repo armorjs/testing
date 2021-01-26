@@ -1,4 +1,4 @@
-export interface ArmorTestInputMethodResult {
+export interface TestInputMethodResult {
 	instance: any|null;
 	func: any;
 	args: any[];
