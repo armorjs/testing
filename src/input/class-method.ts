@@ -1,6 +1,6 @@
-import {ArmorTestInput} from './input';
+import {TestInput} from '../test/input';
 
-export interface ArmorTestInputClassMethod {
+export interface TestInputClassMethod {
 	name: string;
 	paramCount: number;
 	instanced: boolean;

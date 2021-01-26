@@ -1,10 +1,10 @@
 import {Test} from '../test';
-import {TestInstanceMethodExists} from '../case/instance-method-exists';
-import {TestInstanceMethodParamCount} from '../case/instance-method-param-count';
-import {TestExecutor} from '../executor';
+import {TestInstanceMethodExists} from '../test/instance-method-exists';
+import {TestInstanceMethodParamCount} from '../test/instance-method-param-count';
+import {Executor} from '../executor';
 import {TestInputClassMethod} from '../input';
 
-export class TestExecutorClassInstance extends TestExecutor {
+export class TestExecutorClassInstance extends Executor {
 	public instanceMethod: {
 		exists: TestInstanceMethodExists;
 		paramCount: TestInstanceMethodParamCount;

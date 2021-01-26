@@ -1,10 +1,10 @@
 import {Tests, TestsClass} from '../cases';
 
 import {Test} from '../test';
-import {TestStaticMethodExists} from '../case/static-method-exists';
-import {TestStaticMethodParamCount} from '../case/static-method-param-count';
+import {TestStaticMethodExists} from '../test/static-method-exists';
+import {TestStaticMethodParamCount} from '../test/static-method-param-count';
 import {Executor} from '../executor';
-import {TestInputClassMethod} from '../input';
+import {TestInputClassMethod} from '../test-input-class-method';
 
 export class TestExecutorClassStatic extends Executor {
 	public staticMethod: {
