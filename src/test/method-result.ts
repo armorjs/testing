@@ -1,12 +1,12 @@
-import {ArmorTestCase} from './case';
-import {ArmorTestInputMethodResult} from '../input/method-result';
+import {Test} from '../test';
+import {TestInputMethodResult} from '../input/method-result';
 
-export class ArmorTestCaseMethodResult extends ArmorTestCase {
+export class TestCaseMethodResult extends Test {
 	constructor(parentId: string, id: string, label: string) {
 		super(parentId, id, label);
 	}
 
-	public async execute(input: ArmorTestInputMethodResult): Promise<any> {
+	public async execute(input: TestInputMethodResult): Promise<any> {
 		it(this.label, () => {
 			const result = input.func.apply(input.instance, input.args);
 			expect(result).toBe(input.expectedResult);

@@ -1,6 +1,6 @@
-import {ArmorTestCase} from './case';
+import {Test} from '../test';
 
-export class ArmorTestCaseInstanceMethodParamCount extends ArmorTestCase {
+export class TestCaseInstanceMethodParamCount extends Test {
 	constructor(parentId: string, id: string, label: string) {
 		super(parentId, id, label);
 	}

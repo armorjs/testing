@@ -1,3 +1,3 @@
-import {ArmorTestExecutor} from './executor';
+import {Executor} from '../executor';
 
-export class ArmorTestExecutorStringInput extends ArmorTestExecutor {}
+export class TestExecutorStringInput extends Executor {}

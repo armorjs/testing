@@ -1,17 +1,18 @@
-import {ArmorTestCollectionGroup, ArmorTestCollectionItem} from './group';
-import {ArmorTestCollection} from './collection';
+import {TestsetGroup} from './group';
+import {TestsetItem} from './item';
+import { Testset } from '../testset';
 
-export class ArmorTestCollectionBooleans implements ArmorTestCollection {
-	public readonly valid: ArmorTestCollectionGroup;
-	public readonly invalid: ArmorTestCollectionGroup;
+export class TestsetBooleans implements Testset {
+	public readonly valid: TestsetGroup;
+	public readonly invalid: TestsetGroup;
 
 	constructor() {
 		this.invalid = this.createInvalid();
 		this.valid = this.createValid();
 	}
 
-	public createValid(): ArmorTestCollectionGroup {
-		return new ArmorTestCollectionGroup('booleans.valid', 'Valid Booleans', [
+	public createValid(): TestsetGroup {
+		return new TestsetGroup('booleans.valid', 'Valid Booleans', [
 			{label: 'boolean (true)', value: true},
 			{label: 'boolean (false)', value: false},
 			{label: 'string (empty)', value: ''},
@@ -25,8 +26,8 @@ export class ArmorTestCollectionBooleans implements ArmorTestCollection {
 		]);
 	}
 
-	public createInvalid(): ArmorTestCollectionGroup {
-		return new ArmorTestCollectionGroup('booleans.invalid', 'Invalid Booleans', [
+	public createInvalid(): TestsetGroup {
+		return new TestsetGroup('booleans.invalid', 'Invalid Booleans', [
 
 		]);
 	}

@@ -1,4 +1,4 @@
-export class ArmorTestCollectionItem {
+export class TestsetItem {
 	public readonly label: string;
 	public readonly value: any;
 

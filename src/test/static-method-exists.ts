@@ -1,6 +1,6 @@
-import {ArmorTestCase} from './case';
+import {Test} from '../test';
 
-export class ArmorTestCaseStaticMethodExists extends ArmorTestCase {
+export class TestCaseStaticMethodExists extends Test {
 	constructor(parentId: string, id: string, label: string) {
 		super(parentId, id, label);
 	}

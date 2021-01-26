@@ -1,33 +1,33 @@
-import {ArmorTestCases, ArmorTestCasesClass} from '../cases';
+import {Tests, TestsClass} from '../cases';
 
-import {ArmorTestCase} from '../case';
-import {ArmorTestCaseStaticMethodExists} from '../case/static-method-exists';
-import {ArmorTestCaseStaticMethodParamCount} from '../case/static-method-param-count';
-import {ArmorTestExecutor} from '../executor';
-import {ArmorTestInputClassMethod} from '../input';
+import {Test} from '../test';
+import {TestStaticMethodExists} from '../case/static-method-exists';
+import {TestStaticMethodParamCount} from '../case/static-method-param-count';
+import {Executor} from '../executor';
+import {TestInputClassMethod} from '../input';
 
-export class ArmorTestExecutorClassStatic extends ArmorTestExecutor {
+export class TestExecutorClassStatic extends Executor {
 	public staticMethod: {
-		exists: ArmorTestCaseStaticMethodExists;
-		paramCount: ArmorTestCaseStaticMethodParamCount;
+		exists: TestStaticMethodExists;
+		paramCount: TestStaticMethodParamCount;
 	};
 
 	constructor() {
 		super('class.static');
 		this.staticMethod = {
-			exists: new ArmorTestCaseStaticMethodExists(this.id, '', ''),
-			paramCount: new ArmorTestCaseStaticMethodParamCount(this.id, '', '')
+			exists: new TestStaticMethodExists(this.id, '', ''),
+			paramCount: new TestStaticMethodParamCount(this.id, '', '')
 		};
 	}
 
-	public async execute(staticClass: any, expectedMethods: ArmorTestInputClassMethod[]): Promise<any> {
+	public async execute(staticClass: any, expectedMethods: TestInputClassMethod[]): Promise<any> {
 		if (!staticClass) {
 			throw new Error(`Test executor with id '${this.id}' execution failed - no class provided.`);
 		}
 
 		// tslint:disable-next-line
 		for (let i = 0; i < expectedMethods.length; i++) {
-			const input: ArmorTestInputClassMethod = expectedMethods[i];
+			const input: TestInputClassMethod = expectedMethods[i];
 
 			await this.staticMethod.exists.execute(staticClass, input.name);
 			await this.staticMethod.paramCount.execute(staticClass, input.name, input.paramCount);

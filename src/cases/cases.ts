@@ -1,12 +1,12 @@
-import {ArmorTestCase} from '../case';
-import {ArmorTestExecutor} from '../executor';
+import {Test} from '../test';
+import {Executor} from '../executor';
 
-export class ArmorTestCases {
+export class TestCases {
 	public readonly id: string;
 	public readonly label: string;
-	public readonly cases: ArmorTestCase[];
+	public readonly cases: Test[];
 
-	constructor(id: string, label: string, cases: ArmorTestCase[]) {
+	constructor(id: string, label: string, cases: Test[]) {
 		this.id = id;
 
 		if (typeof id !== 'string') {

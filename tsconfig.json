@@ -1,24 +1,16 @@
 {
-	"exclude": [
-		"node_modules",
-		"**/*.spec.ts",
-		"tests",
-		"dist/**"
-	],
-	"include": [
-		"**/src/index.ts"
-	],
-	"filesGlob": [
-		"./src/**/*.ts",
-		"!./node_modules/**"
-	],
-	"rootDir": ".",
+	"exclude": ["node_modules", "**/*.spec.ts", "tests", "dist/**"],
+	"include": ["src/main/index.ts", "src/main/**.ts"],
+	"filesGlob": ["./src/main/**/*.ts", "!./node_modules/**"],
+
 	"compilerOptions": {
+		"rootDir": "./",
 		"preserveConstEnums": true,
-		"module": "commonjs",
+		"module": "es2015",
 		"esModuleInterop": true,
 		"moduleResolution": "node",
-		"target": "es6",
+		"jsx": "preserve",
+		"target": "es2015",
 		"traceResolution": false,
 		"lib": ["es6", "dom"],
 		"isolatedModules": false,
@@ -32,5 +24,10 @@
 		"strictPropertyInitialization": true,
 		"alwaysStrict": true,
 		"noImplicitUseStrict": false
+	},
+	"ts-node": {
+		"compilerOptions": {
+			"module": "commonjs"
+		}
 	}
 }

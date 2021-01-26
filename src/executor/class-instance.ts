@@ -1,33 +1,31 @@
-import {ArmorTestCases, ArmorTestCasesClass} from '../cases';
+import {Test} from '../test';
+import {TestInstanceMethodExists} from '../case/instance-method-exists';
+import {TestInstanceMethodParamCount} from '../case/instance-method-param-count';
+import {TestExecutor} from '../executor';
+import {TestInputClassMethod} from '../input';
 
-import {ArmorTestCase} from '../case';
-import {ArmorTestCaseInstanceMethodExists} from '../case/instance-method-exists';
-import {ArmorTestCaseInstanceMethodParamCount} from '../case/instance-method-param-count';
-import {ArmorTestExecutor} from '../executor';
-import {ArmorTestInputClassMethod} from '../input';
-
-export class ArmorTestExecutorClassInstance extends ArmorTestExecutor {
+export class TestExecutorClassInstance extends TestExecutor {
 	public instanceMethod: {
-		exists: ArmorTestCaseInstanceMethodExists;
-		paramCount: ArmorTestCaseInstanceMethodParamCount;
+		exists: TestInstanceMethodExists;
+		paramCount: TestInstanceMethodParamCount;
 	};
 
-	constructor(methods: ArmorTestInputClassMethod[]) {
+	constructor(methods: TestInputClassMethod[]) {
 		super('class.instance');
 		this.instanceMethod = {
-			exists: new ArmorTestCaseInstanceMethodExists(this.id, '', ''),
-			paramCount: new ArmorTestCaseInstanceMethodParamCount(this.id, '', '')
+			exists: new TestInstanceMethodExists(this.id, '', ''),
+			paramCount: new TestInstanceMethodParamCount(this.id, '', '')
 		};
 	}
 
-	public async execute(instance: any, expectedMethods: ArmorTestInputClassMethod[]): Promise<any> {
+	public async execute(instance: any, expectedMethods: TestInputClassMethod[]): Promise<any> {
 		if (!instance) {
 			throw new Error(`Test executor with id '${this.id}' execution failed - no instance provided.`);
 		}
 
 		// tslint:disable-next-line
 		for (let i = 0; i < expectedMethods.length; i++) {
-			const input: ArmorTestInputClassMethod = expectedMethods[i];
+			const input: TestInputClassMethod = expectedMethods[i];
 
 			await this.instanceMethod.exists.execute(instance, input.name);
 			await this.instanceMethod.paramCount.execute(instance, input.name, input.paramCount);

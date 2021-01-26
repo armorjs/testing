@@ -1,4 +1,4 @@
-export class ArmorTestCase {
+export class Test {
 	public readonly parentId: string;
 	public readonly id: string;
 	public readonly label: string;
