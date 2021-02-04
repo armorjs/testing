@@ -1,6 +1,6 @@
+import {Testset} from '../testset';
 import {TestsetGroup} from './group';
 import {TestsetItem} from './item';
-import { Testset } from '../testset';
 
 export class TestsetBooleans implements Testset {
 	public readonly valid: TestsetGroup;
@@ -16,7 +16,7 @@ export class TestsetBooleans implements Testset {
 			{label: 'boolean (true)', value: true},
 			{label: 'boolean (false)', value: false},
 			{label: 'string (empty)', value: ''},
-			{label: 'string (normal)', value: 'Bakers love bread?'}
+			{label: 'string (normal)', value: 'Bakers love bread?'},
 			{label: 'object', value: {}},
 			{label: 'function', value: () => {}},
 			{label: 'undefined', value: undefined},
