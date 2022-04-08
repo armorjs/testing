@@ -2,19 +2,40 @@ module.exports = {
 	roots: ['./'],
 	coverageDirectory: './coverage',
 	coveragePathIgnorePatterns: [
-		'tests/',
-		'node_modules/',
+		'.eslintrc.js',
 		'.node/',
-		'jest/',
+		'babel.config.js',
+		'build-events.ts',
 		'coverage/',
-		'webpack.config.js'
+		'jest.config.js',
+		'jest/',
+		'node_modules/',
+		'tests/',
+		'webpack.config.js',
+		'webpack.dev.js'
 	],
-	testPathIgnorePatterns: ['/node_modules/'],
-	testEnvironment: 'jsdom',
-	transform: {
-		'^.+\\.tsx?$': 'ts-jest'
-	},
-	testRegex: '(/__tests__/.*|(\\.|/)(spec))\\.ts$',
 	moduleFileExtensions: ['ts', 'js', 'json'],
-	testResultsProcessor: 'jest-sonar-reporter'
+	testEnvironment: 'jsdom',
+	testPathIgnorePatterns: [
+		'.eslintrc.js',
+		'build-events.ts',
+		'node_modules/',
+		'coverage/',
+		'gulp.js',
+		'gulp.ts',
+		'./jest.config.js',
+		'./webpack.*.js',
+		'./webpack.*.ts'
+	],
+	transformIgnorePatterns: ['jest.config.js'],
+	testRegex: '(/__tests__/.*|(\\.|/)(spec))\\.ts$',
+	testResultsProcessor: 'jest-sonar-reporter',
+	globals: {
+		'ts-jest': {
+			tsconfig: 'tsconfig.json'
+		}
+	},
+	transform: {
+		'^.+\\.ts$': 'ts-jest'
+	}
 };
