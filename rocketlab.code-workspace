@@ -14,5 +14,17 @@
 			"**/Thumbs.db": true,
 			"node_modules/**": true
 		}
+	},
+	"extensions": {
+		"recommendations": [
+			"aaron-bond.better-comments",
+			"codezombiech.gitignore",
+			"dbaeumer.vscode-eslint",
+			"yzhang.markdown-all-in-one",
+			"eg2.vscode-npm-script",
+			"esbenp.prettier-vscode",
+			"sonarsource.sonarlint-vscode",
+			"amatiasq.sort-imports"
+		]
 	}
 }

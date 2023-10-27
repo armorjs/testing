@@ -1,8 +1,8 @@
-import {BaseObject} from '../../base/object';
+import type {BaseObject} from '@toreda/types';
 import {TestCase} from '../../test/case';
 import type {TestCaseData} from '../../test/case/data';
 
-/**
+/**z
  * @category Prefabs
  */
 export class StaticMethodExists extends TestCase<unknown, boolean> {

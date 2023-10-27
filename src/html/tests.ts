@@ -24,16 +24,117 @@
  */
 
 import type {TestCaseData} from '../test/case/data';
+import {TestInput} from '../test/input';
 
 /**
  * @category Dataset - HTML
  */
 export class HtmlTests {
-	public static Valid = {
-		Values: [] as TestCaseData<string, boolean>[]
+	public static JavascriptSnippet = {
+		Valid: [
+			{label: 'example1', value: 'str.toUpperCase()'},
+			{label: 'example2', value: 'let obj={1: 125, 2: 149.7};'},
+			{label: 'example3', value: "alert('Welcome')"},
+			{label: 'example4', value: "alert('Welcome')"}
+		] as TestInput<string>[],
+		Invalid: [
+			{label: 'example1', value: 'str.toUpperCase;'},
+			{label: 'example2', value: 'str.tolowercase();'},
+			{label: 'example3', value: 'let a={1=125, 2=149.7};'},
+			{label: 'example4', value: 'alert(((();'}
+		] as TestInput<string>[]
 	} as const;
-	public static Invalid = {
-		Truthy: [] as TestCaseData<string, boolean>[],
-		Falsy: [] as TestCaseData<string, boolean>[]
-	} as const;
+
+	public static Document = {
+		UnescapedValid: [
+			{
+				label: 'example1',
+				args: `<html>
+                <head>
+                    <title></title>
+                </head>
+                <body>
+                    <b><p><div></div></p></b>
+                </body>
+            </html>`
+			},
+			{
+				label: 'example2',
+				args: `<html>
+                <head>
+                    <title></title>
+                </head>
+                <body>
+                    <div> <input /> <button></button></div>
+                </body>
+            </html>`
+			},
+			{
+				label: 'example3',
+				args: `<html>
+                <head>
+                    <title></title>
+                </head>
+                <body>
+                    <ul><li></li><li></li><li></li></ul>
+                </body>
+            </html>`
+			},
+			{
+				label: 'example4',
+				args: `<html>
+                <head>
+                    <title></title>
+                </head>
+                <body>
+                    <div><a /></div>
+                </body>
+            </html>`
+			}
+		] as TestCaseData<string, boolean>[],
+		UnescapedInvalid: [
+			{
+				label: 'example1',
+				args: `<html>
+                    <head>
+                        <title></title>
+                    </head>
+                    <body>
+                        <p><div><div><b></div></p></b>
+                    </body>
+                </html>`
+			},
+			{
+				label: 'example2',
+				args: `<html>
+                <head>
+                    <title></title>
+                </head>
+                <body>
+                    <tr><td><td></td></tr>
+                </body>
+            </html>`
+			},
+			{
+				label: 'example3',
+				args: `<html>
+                    <head>
+                        <title></title>
+                    </head>
+                    <body>
+                        <div><a></div>
+                </html>`
+			},
+			{
+				label: 'example4',
+				args: `<html>
+                    <head>
+                    <body>
+                        <div>
+                            <h1><span><li></span></h1>
+                    </body>
+                </html>`
+			}
+		] as TestCaseData<string, boolean>[]
+	};
 }

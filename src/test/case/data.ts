@@ -1,14 +1,16 @@
 import type {RunnableTask} from '@toreda/types';
 import type {TestCaseLabel} from './label';
+import {TestInput} from '../input';
 
 /**
  * @category Test Cases
  */
-export interface TestCaseData<ArgT, ReturnT> {
-	id: string;
+export interface TestCaseData<InputT, ReturnT> {
+	runnableId: string;
+	testId: string;
 	label: TestCaseLabel | string;
-	args: ArgT;
+	input: TestInput<InputT>;
 	result: ReturnT;
 	parentId?: string;
-	task: RunnableTask<ArgT, ReturnT>;
+	task: RunnableTask<InputT, ReturnT>;
 }
