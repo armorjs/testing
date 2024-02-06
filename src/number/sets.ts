@@ -1,9 +1,9 @@
-import type {TestInput} from './test/input';
+import type {TestInput} from '../test/input';
 
 /**
  * @category Test Cases - Numbers
  */
-export class Numbers {
+export class NumberSets {
 	public static Valid = {
 		Truthy: [] as TestInput<number>[],
 		Standard: [] as TestInput<number>[]

@@ -1,7 +1,7 @@
 /**
  *	MIT License
  *
- *	Copyright (c) 2022 Toreda, Inc.
+ *	Copyright (c) 2019 Toreda, Inc.
  *
  *	Permission is hereby granted, free of charge, to any person obtaining a copy
  *	of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,7 @@
  *
  */
 
-import type {ArrayFunc, Iterable} from '@toreda/types';
+import type {ArrayFunc} from '@toreda/types';
 
 import {Log} from '@toreda/log';
 import {TestCase} from './case';

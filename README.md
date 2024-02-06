@@ -10,10 +10,9 @@
 
 &nbsp;
 # `@toreda/rocketlab`
-Write robust & reusable unit tests.
+Automatically generate comprehensive unit tests for your code.
 
 &nbsp;
-
 
 # Install
 `@toreda/rocketlab` is available as an [NPM package](https://www.npmjs.com/package/@toreda/rocketlab).
@@ -40,7 +39,7 @@ npm install @toreda/rocketlab
 [MIT](LICENSE) &copy; Toreda, Inc.
 
 ## Copyright
-Copyright &copy; 2022 Toreda, Inc. All Rights Reserved.
+Copyright &copy; 2024 Toreda, Inc. All Rights Reserved.
 
 &nbsp;
 

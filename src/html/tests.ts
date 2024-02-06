@@ -1,7 +1,7 @@
 /**
  *	MIT License
  *
- *	Copyright (c) 2022 Toreda, Inc.
+ *	Copyright (c) 2019 Toreda, Inc.
  *
  *	Permission is hereby granted, free of charge, to any person obtaining a copy
  *	of this software and associated documentation files (the "Software"), to deal
@@ -32,23 +32,23 @@ import {TestInput} from '../test/input';
 export class HtmlTests {
 	public static JavascriptSnippet = {
 		Valid: [
-			{label: 'example1', value: 'str.toUpperCase()'},
-			{label: 'example2', value: 'let obj={1: 125, 2: 149.7};'},
-			{label: 'example3', value: "alert('Welcome')"},
-			{label: 'example4', value: "alert('Welcome')"}
+			{label: 'example1', value: 'str.toUpperCase()'} as const,
+			{label: 'example2', value: 'let obj={1: 125, 2: 149.7};'} as const,
+			{label: 'example3', value: "alert('Welcome')"} as const,
+			{label: 'example4', value: "alert('Welcome')"} as const
 		] as TestInput<string>[],
 		Invalid: [
-			{label: 'example1', value: 'str.toUpperCase;'},
-			{label: 'example2', value: 'str.tolowercase();'},
-			{label: 'example3', value: 'let a={1=125, 2=149.7};'},
-			{label: 'example4', value: 'alert(((();'}
+			{label: 'example1', value: 'str.toUpperCase;'} as const,
+			{label: 'example2', value: 'str.tolowercase();'} as const,
+			{label: 'example3', value: 'let a={1=125, 2=149.7};'} as const,
+			{label: 'example4', value: 'alert(((();'} as const
 		] as TestInput<string>[]
 	} as const;
 
 	public static Document = {
 		UnescapedValid: [
 			{
-				label: 'example1',
+				label: 'example1' as const,
 				args: `<html>
                 <head>
                     <title></title>
@@ -56,10 +56,10 @@ export class HtmlTests {
                 <body>
                     <b><p><div></div></p></b>
                 </body>
-            </html>`
-			},
+            </html>` as const
+			} as const,
 			{
-				label: 'example2',
+				label: 'example2' as const,
 				args: `<html>
                 <head>
                     <title></title>
@@ -67,8 +67,8 @@ export class HtmlTests {
                 <body>
                     <div> <input /> <button></button></div>
                 </body>
-            </html>`
-			},
+            </html>` as const
+			} as const,
 			{
 				label: 'example3',
 				args: `<html>
@@ -78,10 +78,10 @@ export class HtmlTests {
                 <body>
                     <ul><li></li><li></li><li></li></ul>
                 </body>
-            </html>`
-			},
+            </html>` as const
+			} as const,
 			{
-				label: 'example4',
+				label: 'example4' as const,
 				args: `<html>
                 <head>
                     <title></title>
@@ -89,12 +89,12 @@ export class HtmlTests {
                 <body>
                     <div><a /></div>
                 </body>
-            </html>`
-			}
+            </html>` as const
+			} as const
 		] as TestCaseData<string, boolean>[],
 		UnescapedInvalid: [
 			{
-				label: 'example1',
+				label: 'example1' as const,
 				args: `<html>
                     <head>
                         <title></title>
@@ -102,10 +102,10 @@ export class HtmlTests {
                     <body>
                         <p><div><div><b></div></p></b>
                     </body>
-                </html>`
-			},
+                </html>` as const
+			} as const,
 			{
-				label: 'example2',
+				label: 'example2' as const,
 				args: `<html>
                 <head>
                     <title></title>
@@ -114,27 +114,27 @@ export class HtmlTests {
                     <tr><td><td></td></tr>
                 </body>
             </html>`
-			},
+			} as const,
 			{
-				label: 'example3',
+				label: 'example3' as const,
 				args: `<html>
                     <head>
                         <title></title>
                     </head>
                     <body>
                         <div><a></div>
-                </html>`
-			},
+                </html>` as const
+			} as const,
 			{
-				label: 'example4',
+				label: 'example4' as const,
 				args: `<html>
                     <head>
                     <body>
                         <div>
                             <h1><span><li></span></h1>
                     </body>
-                </html>`
-			}
+                </html>` as const
+			} as const
 		] as TestCaseData<string, boolean>[]
 	};
 }

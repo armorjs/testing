@@ -23,14 +23,4 @@
  *
  */
 
-/**
- * Label arguments for a single test case. Test Executors combine provided
- * arguments at runtime to create a unique labels for each test.
- *
- * @category Test Cases
- */
-export interface TestCaseLabel {
-	prefix?: string;
-	content: string;
-	postfix?: string;
-}
+export interface TestSets {}

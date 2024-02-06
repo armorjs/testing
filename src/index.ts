@@ -9,10 +9,17 @@ export {InstanceMethod} from './instance/method';
 export {InstanceMethodExists} from './instance/method/exists';
 export {IntegerTests} from './integer/tests';
 export {Method} from './method';
-export {Numbers} from './numbers';
+
+export {NumberSetKey} from './number/set/key';
+export {NumberSets} from './number/sets';
 export {Outcome} from './outcome';
 export {StaticMethodExists} from './static/method/exists';
 export {StaticMethodParamCount} from './static/method/param/count';
 export {Strings} from './strings';
 export {Suite} from './suite';
+export {TestCase} from './test/case';
+export {TestCases} from './test/cases';
+export {TestInput} from './test/input';
 export {TestSet} from './test/set';
+export {TestSetOptions} from './test/set/options';
+export {TestSets} from './test/sets';
